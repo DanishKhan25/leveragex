@@ -8,6 +8,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import NotificationBellIcon from "../../assets/svg-icons/NotificationBellIcon";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -61,7 +62,7 @@ const Header = () => {
             </MenuItem>
           </Menu>
         </div>
-        <div>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <Button
             variant="contained"
             sx={{
@@ -83,6 +84,9 @@ const Header = () => {
           >
             Register
           </Button>
+          <span style={{ marginLeft: "1rem" }}>
+            <NotificationBellIcon />
+          </span>
         </div>
       </Toolbar>
     </AppBar>
