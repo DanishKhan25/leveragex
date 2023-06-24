@@ -7,6 +7,7 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -20,11 +21,11 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#fff" }}>
+    <AppBar position="static" sx={{ bgcolor: "#fff", boxShadow: "none" }}>
       <Toolbar>
         <Typography
           variant="h6"
-          style={{ textAlign: "start", color: "#F0B90B" }}
+          style={{ textAlign: "start", color: "#F0B90B", fontSize: "2rem" }}
         >
           LeverageX
         </Typography>
@@ -36,10 +37,15 @@ const Header = () => {
             sx={{
               color: "#1E2329",
               textTransform: "none",
+              fontSize: "24px",
             }}
           >
-            Trade
+            Trade{" "}
+            <ArrowDropDownIcon
+              sx={{ transform: anchorEl ? "rotate(180deg)" : "rotate(0deg)" }}
+            />
           </Button>
+
           <Menu
             id="trade-menu"
             anchorEl={anchorEl}
@@ -47,9 +53,12 @@ const Header = () => {
             open={Boolean(anchorEl)}
             onClose={handleTradeClose}
           >
-            <MenuItem onClick={handleTradeClose}>Option 1</MenuItem>
-            <MenuItem onClick={handleTradeClose}>Option 2</MenuItem>
-            <MenuItem onClick={handleTradeClose}>Option 3</MenuItem>
+            <MenuItem onClick={handleTradeClose}>
+              Spot trade in Lex coin
+            </MenuItem>
+            <MenuItem onClick={handleTradeClose}>
+              Trade in leverage in xBTC
+            </MenuItem>
           </Menu>
         </div>
         <div>
