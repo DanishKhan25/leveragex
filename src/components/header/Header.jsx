@@ -9,16 +9,20 @@ import {
 } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import NotificationBellIcon from "../../assets/svg-icons/NotificationBellIcon";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-
+  const navigate = useNavigate();
   const handleTradeClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleTradeClose = () => {
+  const handleTradeClose = (type) => {
     setAnchorEl(null);
+    if (type === "lex") navigate("/lex");
+
+    if (type === "btc") navigate("/x-btc");
   };
 
   return (
@@ -54,12 +58,15 @@ const Header = () => {
             open={Boolean(anchorEl)}
             onClose={handleTradeClose}
           >
-            <MenuItem onClick={handleTradeClose}>
-              Spot trade in Lex coin
+            <MenuItem onClick={() => handleTradeClose("lex")}>
+              {/* <Link to="/lex">Spot trade in Lex coin</Link> */}Spot trade in
+              Lex coin
             </MenuItem>
-            <MenuItem onClick={handleTradeClose}>
+            {/* <Link to="/x-btc"> */}
+            <MenuItem onClick={() => handleTradeClose("btc")}>
               Trade in leverage in xBTC
             </MenuItem>
+            {/* </Link> */}
           </Menu>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>

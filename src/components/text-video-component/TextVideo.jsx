@@ -1,4 +1,6 @@
 import { Box, Button, Divider } from "@mui/material";
+import Googleicon from "../../assets/svg-icons/Googleicon";
+import Facebook from "../../assets/svg-icons/Facebook";
 
 const TextVideo = () => {
   return (
@@ -6,8 +8,8 @@ const TextVideo = () => {
       style={{
         display: "flex",
         alignItems: "center",
-        height: "80vh",
-        padding: "5%",
+        height: "70vh",
+        padding: "3%",
       }}
     >
       <article style={{ flex: 1, height: "80%" }}>
@@ -43,6 +45,7 @@ const TextVideo = () => {
                 fontSize: "16px",
               }}
             >
+              <Googleicon /> {"  "}
               Login with Google
             </Button>
             <Button
@@ -53,6 +56,8 @@ const TextVideo = () => {
                 fontSize: "16px",
               }}
             >
+              <Facebook />
+              {"  "}
               Login with FaceBook
             </Button>
           </div>
