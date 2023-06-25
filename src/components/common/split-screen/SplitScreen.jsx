@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./split-screen.module.scss";
 const SplitScreen = ({
   leftTop,

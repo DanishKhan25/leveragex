@@ -1,0 +1,41 @@
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  background-color: #fff;
+}
+
+.header-left {
+  font-size: 20px;
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  color: #f0b90b;
+  align-items: center;
+}
+.coin-name {
+  color: #fff;
+  background-color: #2d2d2d;
+  padding: inherit;
+  font: 1em sans-serif;
+}
+.header-center {
+  display: flex;
+  justify-content: space-around;
+  gap: 32px;
+  align-items: center;
+}
+
+.header-center div:first-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
