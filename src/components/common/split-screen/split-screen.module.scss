@@ -26,6 +26,15 @@
     .right-pane-top-section {
       flex: 1;
       border: 1px solid green;
+      display: flex;
+      .right-pane-top-left {
+        flex: 1;
+        border: 2px solid green;
+      }
+      .right-pane-top-right {
+        flex: 1;
+        border: 2px solid green;
+      }
     }
     .right-pane-bottom-section {
       flex: 1;
