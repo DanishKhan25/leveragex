@@ -6,7 +6,7 @@ import { generateStockData } from "../../function/generateStockData";
 
 const XBtcCoin = () => {
   const data = generateStockData(80, 180);
-  console.log("data", data);
+
   const options = {
     chart: {
       type: "candlestick",

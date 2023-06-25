@@ -2,6 +2,7 @@ import React from "react";
 import { chartData2 } from "../../data/chartData";
 import CandlestickChart from "../../components/common/charts/ChandleSticks";
 import SplitScreen from "../../components/common/split-screen/SplitScreen";
+import FinhubData from "../../data/FinhubData";
 
 const LexCoin = () => {
   const options = {
@@ -32,7 +33,11 @@ const LexCoin = () => {
 
   return (
     <div>
-      <SplitScreen leftTop={<CandlestickChart options={options} />} />
+      <SplitScreen
+        leftTop={
+          <CandlestickChart options={options} rightTop={<FinhubData />} />
+        }
+      />
     </div>
   );
 };
