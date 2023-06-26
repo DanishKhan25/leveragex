@@ -10,7 +10,7 @@ import {
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import NotificationBellIcon from "../../assets/svg-icons/NotificationBellIcon";
 import { useNavigate } from "react-router-dom";
-
+import classes from "./header.module.scss";
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
@@ -26,15 +26,29 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#fff", boxShadow: "none" }}>
-      <Toolbar>
-        <Typography
-          variant="h6"
-          style={{ textAlign: "start", color: "#F0B90B", fontSize: "2rem" }}
-        >
+    <AppBar
+      position="static"
+      className={classes["header"]}
+      sx={{
+        bgcolor: "#fff",
+        boxShadow: "none",
+      }}
+    >
+      <Toolbar
+        sx={{
+          "@media (max-width: 576px)": {
+            flexDirection: "column !important",
+            alignItems: "center",
+          },
+        }}
+      >
+        <Typography variant="h6" className={classes["logo"]}>
           LeverageX
         </Typography>
-        <div style={{ flexGrow: 1, textAlign: "center" }}>
+        <div
+          className={classes["header-center"]}
+          style={{ flexGrow: 1, textAlign: "center" }}
+        >
           <Button
             aria-controls="trade-menu"
             aria-haspopup="true"
@@ -69,7 +83,10 @@ const Header = () => {
             {/* </Link> */}
           </Menu>
         </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div
+          className={classes["header-right"]}
+          style={{ display: "flex", alignItems: "center" }}
+        >
           <Button
             variant="contained"
             sx={{

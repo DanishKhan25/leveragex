@@ -1,0 +1,26 @@
+.header {
+  background-color: #fff;
+  box-shadow: none;
+  .logo {
+    text-align: start;
+    color: #f0b90b;
+  }
+  .header-center {
+    flex: 1;
+    text-align: center;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  @media (max-width: 576px) {
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
