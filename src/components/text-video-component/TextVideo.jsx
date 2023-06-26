@@ -1,22 +1,18 @@
 import { Box, Button, Divider } from "@mui/material";
 import Googleicon from "../../assets/svg-icons/Googleicon";
 import Facebook from "../../assets/svg-icons/Facebook";
-
+import classes from "./textVideo.module.scss";
 const TextVideo = () => {
   return (
-    <section
-      style={{
-        display: "flex",
-        alignItems: "center",
-        height: "70vh",
-        padding: "3%",
-      }}
-    >
-      <article style={{ flex: 1, height: "80%" }}>
-        <p style={{ fontSize: "48px", padding: "5% 10%", textAlign: "center" }}>
+    <section className={classes["container"]}>
+      <article className={classes["left-pane"]}>
+        <p className={classes["heading"]}>
           Buy Trade and hold xBTC and Lex Coin.
         </p>
-        <Box sx={{ margin: "0 auto", width: "60%", textAlign: "center" }}>
+        <Box
+          className={classes["buttons-wrapper"]}
+          sx={{ margin: "0 auto", width: "60%", textAlign: "center" }}
+        >
           <Button
             variant="contained"
             sx={{
@@ -63,7 +59,7 @@ const TextVideo = () => {
           </div>
         </Box>
       </article>
-      <article style={{ flex: 1, height: "80%" }}>
+      <article className={classes["rith-pane"]}>
         {/* Replace the video URL with your actual video source */}
         {/* <video
           src="https://www.youtube.com/embed/OgJ_0_ddzxc"
