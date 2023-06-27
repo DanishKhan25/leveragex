@@ -1,4 +1,4 @@
-import { chartData2 } from "../../data/chartData";
+import { chartData2, lexCoinData } from "../../data/chartData";
 import CandlestickChart from "../../components/common/charts/ChandleSticks";
 import SplitScreen from "../../components/common/split-screen/SplitScreen";
 import MuiTable from "../../components/common/table/MuiTable";
@@ -9,6 +9,7 @@ import SplitScreenHeader from "../../components/common/split-screen-header/Split
 import { Helmet } from "react-helmet-async";
 
 const LexCoin = () => {
+  console.log("lexCoinData", lexCoinData);
   const options = {
     chart: {
       type: "candlestick",
@@ -26,6 +27,12 @@ const LexCoin = () => {
     yaxis: {
       tooltip: {
         enabled: true,
+      },
+      opposite: true, // add this to show the scale on the left side
+      labels: {
+        formatter: function (value) {
+          return "$" + value.toFixed(2); // customize the labels as needed
+        },
       },
     },
     series: [
