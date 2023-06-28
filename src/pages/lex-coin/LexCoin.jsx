@@ -1,4 +1,4 @@
-import { chartData2, lexCoinData } from "../../data/chartData";
+import { chartData2, lexCoinData, lexCoinMonthly } from "../../data/chartData";
 import CandlestickChart from "../../components/common/charts/ChandleSticks";
 import SplitScreen from "../../components/common/split-screen/SplitScreen";
 import MuiTable from "../../components/common/table/MuiTable";
@@ -23,6 +23,16 @@ const LexCoin = () => {
     },
     xaxis: {
       type: "datetime",
+      // labels: {
+      //   formatter: function (value) {
+      //     const date = new Date(value);
+      //     const formattedDate = date
+      //       .toISOString()
+      //       .replace("T", " ")
+      //       .slice(0, 19);
+      //     return formattedDate;
+      //   },
+      // },
     },
     yaxis: {
       tooltip: {
@@ -37,7 +47,7 @@ const LexCoin = () => {
     },
     series: [
       {
-        data: chartData2,
+        data: lexCoinMonthly,
       },
     ],
   };
