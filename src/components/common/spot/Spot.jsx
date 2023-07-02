@@ -41,12 +41,16 @@ const Spot = ({ text1, text2 }) => {
           buttonTitle="Buy"
           text1="USDT"
           text2="LEX"
+          PriceValue="32000"
+          AmountValue="3"
         />
         <InputForm
           buttonTitle="Sell"
           backgroundColor="red"
           text1={text1}
           text2={text2}
+          PriceValue="34000"
+          AmountValue="3"
         />
       </form>
     </div>
@@ -55,16 +59,18 @@ const Spot = ({ text1, text2 }) => {
 
 export default Spot;
 
-function InputForm({
+export function InputForm({
   buttonTitle,
   backgroundColor,
   text1 = "USDT",
   text2 = "LEX",
+  PriceValue = "",
+  AmountValue = "",
 }) {
   return (
     <div className={classes["form-left"]}>
-      <PriceTextField label="Price" text={text1} />
-      <PriceTextField label="Amount" text={text2} />
+      <PriceTextField label="Price" text={text1} value={PriceValue} />
+      <PriceTextField label="Amount" text={text2} value={AmountValue} />
       <PercentageSlider />
       <Button
         variant="contained"

@@ -1,9 +1,9 @@
 import { InputAdornment, TextField } from "@mui/material";
 import { useState } from "react";
 
-const PriceTextField = ({ name, label, text }) => {
+const PriceTextField = ({ name, label, text, value = "" }) => {
   /* input change */
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(value);
 
   const handlePriceChange = (event) => {
     setPrice(event.target.value);

@@ -7,11 +7,13 @@ import MuiTable from "../../components/common/table/MuiTable";
 import Spot from "../../components/common/spot/Spot";
 import SplitScreenHeader from "../../components/common/split-screen-header/SplitScreenHeader";
 import { Helmet } from "react-helmet-async";
+import Allot from "../../components/common/allot/Allot";
 
 const XBtcCoin = () => {
+  let factor = 200;
   const data = ChartData.map(([timestamp, open, high, low, close]) => ({
     x: new Date(timestamp),
-    y: [open, high, low, close],
+    y: [open * factor, high * factor, low * factor, close * factor],
   }));
 
   const options = {
@@ -32,6 +34,12 @@ const XBtcCoin = () => {
       tooltip: {
         enabled: true,
       },
+      opposite: true, // add this to show the scale on the left side
+      labels: {
+        formatter: function (value) {
+          return "$" + value.toFixed(2); // customize the labels as needed
+        },
+      },
     },
     series: [
       {
@@ -43,36 +51,21 @@ const XBtcCoin = () => {
 table data
 */
   const totalData = [
-    { price: 10000, amount: 21 },
-    { price: 15000, amount: 53 },
-    { price: 80000, amount: 55 },
-    { price: 100000, amount: 22 },
-    { price: 150000, amount: 13 },
-    { price: 80000, amount: 45 },
-    { price: 10000, amount: 21 },
-    { price: 15000, amount: 53 },
-    { price: 80000, amount: 55 },
-    { price: 100000, amount: 22 },
-    { price: 150000, amount: 13 },
-    { price: 80000, amount: 45 },
-  ];
-  const timeData = [
-    { price: 10000, amount: 21, time: "2023-06-25T10:50:00" },
-    { price: 15000, amount: 53, time: "2023-06-25T10:51:00" },
-    { price: 80000, amount: 55, time: "2023-06-25T10:52:00" },
-    { price: 100000, amount: 22, time: "2023-06-25T10:53:00" },
-    { price: 150000, amount: 13, time: "2023-06-25T10:54:00" },
-    { price: 80000, amount: 45, time: "2023-06-25T10:55:00" },
-    { price: 10000, amount: 21, time: "2023-06-25T10:50:00" },
-    { price: 15000, amount: 53, time: "2023-06-25T10:51:00" },
-    { price: 80000, amount: 55, time: "2023-06-25T10:52:00" },
-    { price: 100000, amount: 22, time: "2023-06-25T10:53:00" },
-    { price: 150000, amount: 13, time: "2023-06-25T10:54:00" },
-    { price: 80000, amount: 45, time: "2023-06-25T10:55:00" },
+    { price: 32100, amount: 21 },
+    { price: 32100, amount: 53 },
+    { price: 32550, amount: 55 },
+    { price: 32650, amount: 22 },
+    { price: 32650, amount: 13 },
+    { price: 36650, amount: 45 },
+    { price: 36650, amount: 21 },
+    { price: 36655, amount: 53 },
+    { price: 36255, amount: 55 },
+    { price: 36255, amount: 22 },
+    { price: 31205, amount: 13 },
+    { price: 30205, amount: 45 },
   ];
 
   const rightTopLeftColumns = ["Price (USDT)", "Amount(LEX)", "Total"];
-  const rightTopRightColumns = ["Price (USDT)", "Amount(LEX)", "Time"];
 
   const ordersList = ["Open orders", "Order history", "Trade history", "Fund"];
   const [activeTab, setActiveTab] = useState(0);
@@ -111,13 +104,7 @@ table data
               type={"total"}
             />
           }
-          rightTopRight={
-            <MuiTable
-              data={timeData}
-              columns={rightTopRightColumns}
-              type={"time"}
-            />
-          }
+          rightTopRight={<Allot />}
         />
       </div>
     </div>
