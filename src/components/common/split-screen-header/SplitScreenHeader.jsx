@@ -1,14 +1,20 @@
 import { Button } from "@mui/material";
 import classes from "./split-screen-header.module.scss";
 import NotificationBellIcon from "../../../assets/svg-icons/NotificationBellIcon";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import laverage from "../../../assets/svg-icons/leverage2.png";
 const SplitScreenHeader = () => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const handleSelect = (event) => {
     const selectedValue = event.target.value;
     if (selectedValue === "lex") navigate("/lex");
     if (selectedValue === "btc") navigate("/x-btc");
+  };
+  const getSelectedValue = () => {
+    if (pathname === "/lex") return "lex";
+    if (pathname === "/x-btc") return "btc";
+    return "";
   };
   return (
     <header className={classes["header-wrapper"]}>
@@ -18,7 +24,11 @@ const SplitScreenHeader = () => {
           LeverageX
         </div>
         <div>
-          <select onChange={handleSelect} className={classes["coin-name"]}>
+          <select
+            onChange={handleSelect}
+            className={classes["coin-name"]}
+            value={getSelectedValue()}
+          >
             <option value="lex">LEX Coin</option>
             <option value="btc">XBTC</option>
           </select>
