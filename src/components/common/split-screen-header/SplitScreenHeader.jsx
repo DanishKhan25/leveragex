@@ -2,12 +2,15 @@ import { Button } from "@mui/material";
 import classes from "./split-screen-header.module.scss";
 import NotificationBellIcon from "../../../assets/svg-icons/NotificationBellIcon";
 import { useNavigate } from "react-router-dom";
+import laverage from "../../../assets/svg-icons/leverage2.png";
 const SplitScreenHeader = ({ coinName }) => {
   const navigate = useNavigate();
   return (
     <header className={classes["header-wrapper"]}>
       <div className={classes["header-left"]}>
-        <div onClick={() => navigate("/")}>LeverageX</div>
+    <div onClick={() => navigate("/")} className={classes["logo"]}>
+           <img src={laverage} alt="logo"  width={20}/>
+          LeverageX</div>
         <div className={classes["coin-name"]}>{coinName}</div>
       </div>
       <div className={classes["header-center"]}>
