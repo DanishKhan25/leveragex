@@ -11,6 +11,8 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import NotificationBellIcon from "../../assets/svg-icons/NotificationBellIcon";
 import { useNavigate } from "react-router-dom";
 import classes from "./header.module.scss";
+import laverage from "../../assets/svg-icons/leverage2.png";
+
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
@@ -42,12 +44,13 @@ const Header = () => {
           },
         }}
       >
+    <img src={laverage} alt="logo"  width={20}/>
         <Typography variant="h6" className={classes["logo"]}>
           LeverageX
         </Typography>
         <div
           className={classes["header-center"]}
-          style={{ flexGrow: 1, textAlign: "center" }}
+          style={{ flexGrow: 1, textAlign: "left" ,paddingLeft:"20px"}}
         >
           <Button
             aria-controls="trade-menu"
@@ -56,13 +59,24 @@ const Header = () => {
             sx={{
               color: "#1E2329",
               textTransform: "none",
-              fontSize: "24px",
+              fontSize: "16px",
             }}
           >
             Trade{" "}
             <ArrowDropDownIcon
               sx={{ transform: anchorEl ? "rotate(180deg)" : "rotate(0deg)" }}
             />
+          </Button>
+          <Button
+          
+            sx={{
+              color: "#1E2329",
+              textTransform: "none",
+              fontSize: "16px",
+            }}
+          >
+           Market
+            
           </Button>
 
           <Menu
