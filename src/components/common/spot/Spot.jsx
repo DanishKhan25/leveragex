@@ -41,16 +41,12 @@ const Spot = ({ text1, text2 }) => {
           buttonTitle="Buy"
           text1="USDT"
           text2="LEX"
-          PriceValue="32000"
-          AmountValue="3"
         />
         <InputForm
           buttonTitle="Sell"
           backgroundColor="red"
           text1={text1}
           text2={text2}
-          PriceValue="34000"
-          AmountValue="3"
         />
       </form>
     </div>
