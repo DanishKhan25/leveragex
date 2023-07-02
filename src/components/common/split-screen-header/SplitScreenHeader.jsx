@@ -3,15 +3,26 @@ import classes from "./split-screen-header.module.scss";
 import NotificationBellIcon from "../../../assets/svg-icons/NotificationBellIcon";
 import { useNavigate } from "react-router-dom";
 import laverage from "../../../assets/svg-icons/leverage2.png";
-const SplitScreenHeader = ({ coinName }) => {
+const SplitScreenHeader = () => {
   const navigate = useNavigate();
+  const handleSelect = (event) => {
+    const selectedValue = event.target.value;
+    if (selectedValue === "lex") navigate("/lex");
+    if (selectedValue === "btc") navigate("/x-btc");
+  };
   return (
     <header className={classes["header-wrapper"]}>
       <div className={classes["header-left"]}>
-    <div onClick={() => navigate("/")} className={classes["logo"]}>
-           <img src={laverage} alt="logo"  width={20}/>
-          LeverageX</div>
-        <div className={classes["coin-name"]}>{coinName}</div>
+        <div onClick={() => navigate("/")} className={classes["logo"]}>
+          <img src={laverage} alt="logo" width={20} />
+          LeverageX
+        </div>
+        <div>
+          <select onChange={handleSelect} className={classes["coin-name"]}>
+            <option value="lex">LEX Coin</option>
+            <option value="btc">XBTC</option>
+          </select>
+        </div>
       </div>
       <div className={classes["header-center"]}>
         <div className={classes["header-center-wrapper"]}>

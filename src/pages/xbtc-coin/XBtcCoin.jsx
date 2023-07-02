@@ -62,7 +62,6 @@ table data
     { price: 36255, amount: 55 },
     { price: 36255, amount: 22 },
     { price: 31205, amount: 13 },
-    { price: 30205, amount: 45 },
   ];
 
   const rightTopLeftColumns = ["Price (USDT)", "Amount(LEX)", "Total"];
@@ -86,7 +85,7 @@ table data
             rel="stylesheet"
           />
         </Helmet>
-        <SplitScreenHeader coinName="XBTC" />
+        <SplitScreenHeader />
         <SplitScreen
           leftTop={<CandlestickChart options={options} />}
           leftBottom={

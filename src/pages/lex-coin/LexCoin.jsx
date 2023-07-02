@@ -9,7 +9,6 @@ import SplitScreenHeader from "../../components/common/split-screen-header/Split
 import { Helmet } from "react-helmet-async";
 
 const LexCoin = () => {
-  console.log("lexCoinData", lexCoinData);
   const options = {
     chart: {
       type: "candlestick",
@@ -104,7 +103,7 @@ table data
           rel="stylesheet"
         />
       </Helmet>
-      <SplitScreenHeader coinName="LEX COIN" />
+      <SplitScreenHeader />
       <SplitScreen
         leftTop={<CandlestickChart options={options} />}
         leftBottom={

@@ -17,7 +17,7 @@ const PriceTextField = ({ name, label, text, value = "" }) => {
       value={price}
       onChange={handlePriceChange}
       InputProps={{
-        endAdornment: <InputAdornment position="end">{text}</InputAdornment>,
+        endAdornment: <InputAdornment position="start">{text}</InputAdornment>,
       }}
       label={label}
     />

@@ -72,6 +72,7 @@ export function InputForm({
       <PriceTextField label="Price" text={text1} value={PriceValue} />
       <PriceTextField label="Amount" text={text2} value={AmountValue} />
       <PercentageSlider />
+      <PriceTextField label="Total" text={text2} value={AmountValue} />
       <Button
         variant="contained"
         sx={{

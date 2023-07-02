@@ -44,13 +44,13 @@ const Header = () => {
           },
         }}
       >
-    <img src={laverage} alt="logo"  width={20}/>
+        <img src={laverage} alt="logo" width={20} />
         <Typography variant="h6" className={classes["logo"]}>
           LeverageX
         </Typography>
         <div
           className={classes["header-center"]}
-          style={{ flexGrow: 1, textAlign: "left" ,paddingLeft:"20px"}}
+          style={{ flexGrow: 1, textAlign: "left", paddingLeft: "20px" }}
         >
           <Button
             aria-controls="trade-menu"
@@ -68,15 +68,13 @@ const Header = () => {
             />
           </Button>
           <Button
-          
             sx={{
               color: "#1E2329",
               textTransform: "none",
               fontSize: "16px",
             }}
           >
-           Market
-            
+            Market
           </Button>
 
           <Menu

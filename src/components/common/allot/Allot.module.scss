@@ -1,16 +1,14 @@
-.wrapper{
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  .row {
     display: flex;
-    flex-direction: column;
-        justify-content: space-between;
-            height: 90%;
-    padding: 10px;
-    .row{
-        display: flex;
-        padding: 7px 14px;
-        justify-content: space-between;
-        border: 1px solid #e7e7e7;
-    }
-    p{
-        margin: 0;
-    }
+    padding: 7px 14px;
+    justify-content: space-between;
+  }
+  p {
+    margin: 0;
+  }
 }
