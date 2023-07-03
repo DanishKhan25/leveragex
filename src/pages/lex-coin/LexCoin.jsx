@@ -65,7 +65,6 @@ table data
     { price: 1.48, amount: 55 },
     { price: 1.46, amount: 22 },
     { price: 1.42, amount: 13 },
-    { price: 1.39, amount: 45 },
   ];
   const timeData = [
     { price: 1.59, amount: 21, time: "2023-06-25T10:50:00" },
@@ -79,7 +78,6 @@ table data
     { price: 1.48, amount: 55, time: "2023-06-25T10:52:00" },
     { price: 1.46, amount: 22, time: "2023-06-25T10:53:00" },
     { price: 1.42, amount: 13, time: "2023-06-25T10:54:00" },
-    { price: 1.39, amount: 45, time: "2023-06-25T10:55:00" },
   ];
 
   const rightTopLeftColumns = ["Price (USDT)", "Amount(LEX)", "Total"];
