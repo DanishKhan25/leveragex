@@ -21,8 +21,8 @@ const MuiTable = ({ data, columns, type }) => {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table>
+    <TableContainer component={Paper} sx={{ height: "100%" }}>
+      <Table stickyHeader sx={{ height: "100%" }}>
         <TableHead>
           <TableRow>
             {columns.map((column, index) => (

@@ -8,14 +8,14 @@ const Allot = () => {
         {/* <span>Allocated</span>
         <span>7</span>
         <span>XBTC</span> */}
-        <PriceTextField label="Allocated" text="XBTC" value="" />
+        <PriceTextField label="Allocated" text="XBTC" value="7" />
       </div>
       <div>
         <p>The 8x price of BTC</p>
         <div className={classes.row}>
           {/* <span>8x =</span>
           <span>2,47,6000</span> */}
-          <PriceTextField label="8x" text=" " value="" />
+          <PriceTextField label="8x" text=" " value="2,47,6000" />
         </div>
       </div>
       <div>
@@ -24,7 +24,7 @@ const Allot = () => {
           {/* <span>Price =</span>
           <span>32,000</span>
           <span>Lex</span> */}
-          <PriceTextField label="Price" text="Lex" value="" />
+          <PriceTextField label="Price" text="Lex" value="32,000" />
         </div>
       </div>
     </div>

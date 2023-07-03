@@ -5,7 +5,7 @@ import PriceTextField from "../text-field/PriceTextField";
 import PercentageSlider from "../slider/PercentageSlider";
 import { Button } from "@mui/material";
 
-const Spot = ({ text1, text2 }) => {
+const Spot = ({ text1, text2, text3 }) => {
   const spotList = ["Spot", "Cross 3X", "IsoLated", "Grid"];
   const [activeTab, setActiveTab] = useState(0);
   const [navActive, setNavActive] = useState(0);
@@ -39,14 +39,16 @@ const Spot = ({ text1, text2 }) => {
         <InputForm
           backgroundColor="green"
           buttonTitle="Buy"
-          text1="USDT"
-          text2="LEX"
+          text1="LEX"
+          text2="XBTC"
+          text3="LEX"
         />
         <InputForm
           buttonTitle="Sell"
           backgroundColor="red"
           text1={text1}
           text2={text2}
+          text3={text3}
         />
       </form>
     </div>
@@ -60,15 +62,17 @@ export function InputForm({
   backgroundColor,
   text1 = "USDT",
   text2 = "LEX",
+  text3 = "LEX",
   PriceValue = "",
   AmountValue = "",
+  totalAmount = "",
 }) {
   return (
     <div className={classes["form-left"]}>
       <PriceTextField label="Price" text={text1} value={PriceValue} />
       <PriceTextField label="Amount" text={text2} value={AmountValue} />
       <PercentageSlider />
-      <PriceTextField label="Total" text={text2} value={AmountValue} />
+      <PriceTextField label="Total" text={text3} value={totalAmount} />
       <Button
         variant="contained"
         sx={{

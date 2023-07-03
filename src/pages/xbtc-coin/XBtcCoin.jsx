@@ -59,9 +59,16 @@ table data
     { price: 36650, amount: 45 },
     { price: 36650, amount: 21 },
     { price: 36655, amount: 53 },
-    { price: 36255, amount: 55 },
+    // { price: 32650, amount: 13 },
+    // { price: 36650, amount: 45 },
+    // { price: 36650, amount: 21 },
+    // { price: 36655, amount: 53 },
+    // { price: 36255, amount: 55 },
     { price: 36255, amount: 22 },
     { price: 31205, amount: 13 },
+    // { price: 36655, amount: 53 },
+    // { price: 36255, amount: 55 },
+    // { price: 36255, amount: 55 },
   ];
 
   const rightTopLeftColumns = ["Price (USDT)", "Amount(LEX)", "Total"];
@@ -95,7 +102,7 @@ table data
               activeTab={activeTab}
             />
           }
-          rightBottom={<Spot text1="LEX" text2="XBTC" />}
+          rightBottom={<Spot text1="LEX" text2="XBTC" text3="LEX" />}
           rightTopLeft={
             <MuiTable
               data={totalData}
