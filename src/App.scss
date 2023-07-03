@@ -1,0 +1,49 @@
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #165bff #e8efff;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+*:hover {
+  &::-webkit-scrollbar-thumb {
+    background-color: #165bff;
+    border: 3px solid #e8efff;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #eef7ff;
+  }
+}
+
+// .app {
+//   // on hover scrollbar will appear
+//   mask-image: linear-gradient(to top, transparent, black),
+//     linear-gradient(to left, transparent 10px, black 12px);
+//   mask-size: 100% 20000px;
+//   mask-position: left bottom;
+//   -webkit-mask-image: linear-gradient(to top, transparent, black),
+//     linear-gradient(to left, transparent 10px, black 12px);
+//   -webkit-mask-size: 100% 20000px;
+//   -webkit-mask-position: left bottom;
+//   transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+//   &:hover {
+//     -webkit-mask-position: left top;
+//     mask-position: left top;
+//   }
+// }
