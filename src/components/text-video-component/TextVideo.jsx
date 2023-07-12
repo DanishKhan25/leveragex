@@ -2,6 +2,7 @@ import { Box, Button, Divider } from "@mui/material";
 import Googleicon from "../../assets/svg-icons/Googleicon";
 import Facebook from "../../assets/svg-icons/Facebook";
 import classes from "./textVideo.module.scss";
+import hero from "../../assets/hero.jpg";
 const TextVideo = () => {
   return (
     <section className={classes["container"]}>
@@ -66,7 +67,7 @@ const TextVideo = () => {
           controls
           width="100%"
         /> */}
-
+        {/* 
         <iframe
           title="YouTube Video"
           width="100%"
@@ -74,7 +75,9 @@ const TextVideo = () => {
           src="https://www.youtube.com/embed/OgJ_0_ddzxc"
           frameBorder="0"
           allowFullScreen
-        />
+        /> */}
+
+        <img src={hero} alt="img" width="68%" />
       </article>
     </section>
   );
